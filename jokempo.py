@@ -2,7 +2,7 @@ from random import randrange
 
 
 def jogar():
-    print("********** Jokenpô **********")
+    print("********** Jokempô **********")
 
     valores = ["PEDRA", "PAPEL", "TESOURA"]
 
@@ -23,8 +23,13 @@ def jogar():
         print("[ 1 ] PAPEL")
         print("[ 2 ] TESOURA")
 
-        escolha_valor = int(input("Digite a sua escolha: "))
         escolha_usuario = None
+
+        try:
+            escolha_valor = int(input("Digite a sua escolha: "))
+        except ValueError:
+            print("Escolha Inválida!")
+            continue
 
         if escolha_valor not in range(0, 3):
             print("Escolha Inválida!\n")
